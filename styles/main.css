@@ -14,17 +14,19 @@
 /* default styles */
 body {
 	font-family: Arial, Helvetica, sans-serif;
-    font-size: 100%;
+	font-size: calc(90% + 0.2vw);	
 	width: 80%;
+	max-width: 1024px;
 	margin: auto;
 	border: 2px solid var(--accent-color);
+	line-height: 1.5;
 }
 a:hover, a:focus{
 	font-style: italic;
 	color: var(--accent-color);
 }
 h1, h2, h3, p, ul {
-	padding: .5em 0;
+	padding: .25em 0;
 }
 h1 {
 	font-size: 150%;
@@ -57,23 +59,46 @@ header {
 	& img {
 		float: left;
 		margin: .75em 1em;
+		min-width: 40px;
+		max-width: 80px;
+		width: 100%;
+		height: auto;
 	}
+	line-height: 1.2;
 }
 
 /* the styles for the main content */
 main {
+	display: flex;
 	padding: 0 1em 1em;
 	& h1 {
-		border-top: 2px solid var(--accent-color);
-		border-bottom: 2px solid var(--accent-color);
 	}
 	& blockquote {
 		font-style: italic;
 		padding-left: 1em;
+		margin: 0.25em 0;
 	}
 	& img {
 		border: 4px double var(--accent-color);
 		border-radius: 10px;
+		min-width: 40px;
+		max-width: 75px;
+		width: 100%;
+		height: auto;
+	}
+	aside{
+		flex-basis: 25%;
+	}
+	section {
+		flex-basis: 75%;
+		margin-right: 5em;
+		img{
+			float: right;
+			min-width: 100px;
+			max-width: 250px;
+			width: 100%;
+			height: auto;
+		}
 	}
 }
 
@@ -90,4 +115,19 @@ footer {
 /* CSS class */
 .large {
 	font-size: 125%;
+}
+.featured {
+	border-top: 2px solid var(--accent-color);
+	border-bottom: 2px solid var(--accent-color);
+}
+.speaker{
+	h1{
+		color: var(--accent-color);
+	}
+	h2{
+		color: black;
+	}
+	p{
+		padding: 0.5em 0;
+	}
 }
